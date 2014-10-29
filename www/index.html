@@ -14,7 +14,7 @@
 		<link rel="stylesheet" href="css/jquery.mobile-1.4.3.min.css" />
 		<link type="text/css" href="css/jqm-datebox.min.css" rel="stylesheet" />
 
-		<link type="text/css" href="http://dev.jtsage.com/jQM-DateBox/css/demos.css" rel="stylesheet" />
+		<link type="text/css" href="css/demos.css" rel="stylesheet" />
 
 		<!-- NOTE: Script load order is significant! -->
 
@@ -23,7 +23,7 @@
 
 		<script type="text/javascript" src="jquerymobile-files/jqm-datebox.core.min.js"></script>
 		<script type="text/javascript" src="jquerymobile-files/jqm-datebox.mode.calbox.min.js"></script>
-		<script src="phonegap.js"></script>
+
 		<script src="js/highcharts.js"></script>
 		<script src="js/exporting.js"></script>
 		<script src="js/script.js"></script>
@@ -59,47 +59,9 @@
 			</div>
 			<div data-role="content" >
 
-				<ul id="lista" data-role="listview" >
+				<ul id="listap" data-role="listview" >
 
-					<li>
-						<a href="#monitor"><img src="img/paciente-fem.png" class="borda" /><h3>Maria da Silva</h3>
-						<p>
-							UTI 153
-						</p> </a>
-						<a id="botaoAlarme" href="" data-role="icon" data-icon='alarm-off' data-mini='true' data-iconpos='notext' data-inline='true' data-theme='a'></a>
-					</li>
-					<li>
-						<a href="" ><img src="img/paciente-mas.png"/><h3>Pedro Rocha</h3>
-						<p>
-							UTI 038
-						</p> </a>
-
-					</li>
-					<li data-icon="alarm-off">
-						<a href=""><img src="img/paciente-fem.png"/> <h3>Isabel Ferreira</h3>
-						<p>
-							UTI 227
-						</p></a>
-					</li>
-					<li data-icon="alarm">
-						<a href=""><img src="img/paciente-mas.png"/> <h3>João Carlos</h3>
-						<p>
-							UTI 018
-						</p></a>
-					</li>
-					<li data-icon="alarm-off">
-						<a href=""><img src="img/paciente-fem.png"/> <h3>Rosana Matos</h3>
-						<p>
-							UTI 527
-						</p></a>
-					</li>
-					<li data-icon="alarm">
-						<a href=""><img src="img/paciente-mas.png"/> <h3>Bruno Ramos</h3>
-						<p>
-							UTI 018
-						</p> </a>
-					</li>
-
+					
 				</ul>
 
 			</div>
@@ -173,42 +135,42 @@
 					<ul data-role="listview" data-inset="true" data-theme="b">
 						<li data-role="data-divider" data-theme="b">
 							<div class="ui-grid-a" >
-								<div class="ui-bar-b ui-grid-solo">
-									<img src="jquerymobile-files/images/icons-png/user-white.png"/> Maria Silva Dias da Cunha
+								<div id="nomeMonitor"class="ui-bar-b ui-grid-solo">
+									<img  src="jquerymobile-files/images/icons-png/user-white.png"/> Maria Silva Dias da Cunha
 								</div>
-								<div class="ui-block-a ui-bar-b">
+								<div id="utiMonitor" class="ui-block-a ui-bar-b">
 									<img src="jquerymobile-files/images/icons-png/location-white.png"/> UTI 123
 								</div>
-								<div class="ui-block-b ui-bar-b ">
+								<div id="idadeMonitor" class="ui-block-b ui-bar-b ">
 									<img src="jquerymobile-files/images/icons-png/star-white.png"/> 45 anos
 								</div>
-								<div class="ui-block-a ui-bar-b">
+								<div id="leitoMonitor" class="ui-block-a ui-bar-b">
 									<img src="jquerymobile-files/images/icons-png/plus-white.png"/> Leito 4
 								</div>
-								<div class="ui-block-b ui-bar-b">
+								<div id="ProntuarioMonitor" class="ui-block-b ui-bar-b">
 									<img src="jquerymobile-files/images/icons-png/tag-white.png"/> N.P. 654736
 								</div>
-								<div class="ui-bar-b ui-grid-solo">
+								<div id="descricaoMonitor" class="ui-bar-b ui-grid-solo">
 									<img src="jquerymobile-files/images/icons-png/edit-white.png"/> Diabética, Hipertensa
 								</div>
 							</div><!-- /grid-b -->
 						</li>
 						<li>
 							<div class="ui-grid-a ui-corner-all" >
-								<div class="ui-block-a ui-bar-a">
+								<div id="monitorFC" class="ui-block-a ui-bar-a">
 									<a id="monFreqCard" href="#graficos" class="" ><img src="img/heart.png"/></a><big><big><big>102</big></big></big> bpm
 								</div>
-								<div class="ui-block-b ui-bar-a">
+								<div id="monitorFR" class="ui-block-b ui-bar-a">
 									<a id="monFreqResp" href="#graficos"><img src="img/lung.png"/></a><big><big><big>20</big></big></big> mpm
 								</div>
-								<div class="ui-block-a ui-bar-a">
+								<div id="monitorTC" class="ui-block-a ui-bar-a">
 									<a id="monTempCorp" href="#graficos"><img src="img/thermometer.png"/></a><big><big><big>38</big></big></big> ºC
 								</div>
-								<div class="ui-block-b ui-bar-a">
+								<div id="monitorSat" class="ui-block-b ui-bar-a">
 									<a id="monSatOxig" href="#graficos"><img src="img/blood.png"/></a><big><big><big>98</big></big></big> %
 								</div>
-								<div class="ui-bar-a ui-grid-solo">
-									<a id="monPressaoArt" href="#graficos"><img src="img/blood pressure.png"/></a><big><big><big>130 / 85</big></big></big> mmHg
+								<div id="monitorPA" class="ui-bar-a ui-grid-solo">
+									<a id="monPressaoArt" href="#graficos"><img src="img/blood pressure.png"/></a><big><big><big>130 / 85 (86)</big></big></big> mmHg
 								</div>
 							</div>
 						</li>
@@ -275,19 +237,24 @@
 					<div data-role="navbar" data-theme="a" >
 						<ul>
 							<li>
-								<a id="btPressaoArt"  class="ui-state-persist"><img src="img/blood pressure.png" class="imagensgraficos"/></a>
-							</li>
-							<li>
-								<a id="btSatOxig"><img src="img/blood.png" class="imagensgraficos"/></a>
-							</li>
-							<li>
 								<a id="btFreqCar"><img src="img/heart.png" class="imagensgraficos"/></a>
-							</li>
-							<li>
-								<a id="btTempCorp"><img src="img/thermometer.png" class="imagensgraficos" /></a>
+								
 							</li>
 							<li>
 								<a id="btFreqResp"><img src="img/lung.png" class="imagensgraficos" /></a>
+								
+							</li>
+							<li>
+								<a id="btTempCorp"><img src="img/thermometer.png" class="imagensgraficos" /></a>
+								
+							</li>
+							<li>
+								<a id="btSatOxig"><img src="img/blood.png" class="imagensgraficos"/></a>
+								
+							</li>
+							<li>
+								<a id="btPressaoArt"  class="ui-state-persist"><img src="img/blood pressure.png" class="imagensgraficos"/></a>
+								
 							</li>
 
 						</ul>
@@ -322,25 +289,7 @@
 						</li>
 					</ul>
 				</div>
-	
-				<div class="ui-grid-d" >
-					<div class="ui-block-a ui-bar-b">
-						 hrs
-					</div>
-					<div class="ui-block-b ui-bar-b">
-						bpm
-					</div>
-					<div class="ui-block-c ui-bar-b">
-						ºC
-					</div>
-					<div class="ui-block-d ui-bar-b">
-						%
-					</div>
-					<div class="ui-block-e ui-bar-b">
-						mmHg
-					</div>
 
-				</div>
 			</div>
 			<div data-role="content">
 
@@ -350,119 +299,59 @@
 					</div>
 					<ul data-role="listview" data-icon="false">
 						<li>
-							<a href="#"><img src="img/ht-icon.png" class="ui-li-icon"/>Freq. Cardiaca: 102 bpm</a>
+							<a id="fcPopup" href="#"><img src="img/ht-icon.png" class="ui-li-icon"/><h3></h3></a>
 						</li>
 						<li>
-							<a href="#"><img src="img/th-icon.png" class="ui-li-icon"/>Temperatura: 38ºC</a>
+							<a id="tPopup" href="#"><img src="img/th-icon.png" class="ui-li-icon"/><h3></h3></a>
 						</li>
 						<li>
-							<a href="#"><img src="img/bp-icon.png" class="ui-li-icon"/>Pressão Arterial: 130/85</a>
+							<a id="frPopup" href="#"><img src="img/icons/l__icon.png" class="ui-li-icon"/><h3></h3></a>
+						</li>
+						
+						<li>
+							<a id="so2Popup" href="#"><img src="img/bs-icon.png" class="ui-li-icon"/><h3></h3></a>
 						</li>
 						<li>
-							<a href="#"><img src="img/bs-icon.png" class="ui-li-icon"/>Sat. Oxigênio: 95%</a>
+							<a id="paPopup" href="#"><img src="img/bp-icon.png" class="ui-li-icon"/><h3></h3></a>
+
 						</li>
 					</ul>
 				</div>
 
-				<ul data-role="listview" data-inset="" data-icon="false">
+				<div class="ui-grid-a">
+    <div class="ui-block-a">
+	<input name="mode1" id="dataInput" type="text" data-role="datebox" data-options='{"mode":"calbox", "maxDays":0, "minDays":5, "useHeader":false}' style=""/>
 
-					<li>
-						<a href="#popupMonitor" data-rel="popup"data-position-to="origin">
-						<div class="ui-grid-d" >
-							<div class="ui-block-a ui-bar-inherit">
-								07
-							</div>
-							<div class="ui-block-b ui-bar-inherit">
-								102
-							</div>
-							<div class="ui-block-c ui-bar-inherit">
-								38
-							</div>
-							<div class="ui-block-d ui-bar-inherit">
-								95
-							</div>
-							<div class="ui-block-e ui-bar-inherit">
-								130/85
-							</div>
+	</div>
+    <div class="ui-block-b"id="bloco2">
+	
+	</div>
+</div><!-- /grid-a -->
+				
+				
+				<table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke" data-column-btn-text="Filtro" data-column-btn-theme="b">
+     
+            <thead >
+	   <tr class="ui-bar-b">
+	   	<th data-priority="1">Hrs</th>
+         <th data-priority="2">FC</th>
+         <th data-priority="3">FR</th>
+         <th data-priority="4">TC</th>
+         <th data-priority="5">SO2</th>
+         <th data-priority="6">PA</th>
+         <th data-priority="6">PAM</th>
+		 </tr>
+     </thead>
 
-						</div> </a>
-					</li>
-					<li>
-						<a href="">08h</a>
-					</li>
-					<li>
-						<a href="#">09h</a>
-					</li>
-					<li>
-						<a href="#">10h</a>
-					</li>
-					<li>
-						<a href="#">11h</a>
-					</li>
-					<li>
-						<a href="#">12h</a>
-					</li>
-					<li>
-						<a href="#">13h</a>
-					</li>
-					<li>
-						<a href="#popupMonitor" data-rel="popup"data-position-to="origin">14h</a>
-					</li>
-					<li>
-						<a href="#">15h</a>
-					</li>
-					<li>
-						<a href="#">16h</a>
-					</li>
-					<li>
-						<a href="#">17h</a>
-					</li>
-					<li>
-						<a href="#">18h</a>
-					</li>
-					<li>
-						<a href="#">19h</a>
-					</li>
-					<li>
-						<a href="#">20h</a>
-					</li>
-					<li>
-						<a href="#">21h</a>
-					</li>
-					<li>
-						<a href="#">22h</a>
-					</li>
-					<li>
-						<a href="#">23h</a>
-					</li>
-					<li>
-						<a href="#">00h</a>
-					</li>
-					<li>
-						<a href="#">01h</a>
-					</li>
-					<li>
-						<a href="">02h</a>
-					</li>
-					<li>
-						<a href="#">03h</a>
-					</li>
-					<li>
-						<a href="#">04h</a>
-					</li>
-					<li>
-						<a href="#">05h</a>
-					</li>
-					<li>
-						<a href="#">06h</a>
-					</li>
+	 <tbody>
+     </tbody>
 
-				</ul
-			</div>
+     
+     
+   </table>
+			</div>	
 
-			<div data-role="footer" data-position="fixed">
-				<input name="mode1" id="dataInput" type="text" data-role="datebox" data-options='{"mode":"calbox", "maxDays":0, "minDays":5, "useHeader":false}' style=""/>
-
+			<div data-role="footer" data-position="fixed" data-theme="b">
 			</div>
 
 		</div>
