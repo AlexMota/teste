@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8">
-
-		<meta name="description" content="">
-		<meta name="author" content="Alexandre Mota">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="jquerymobile-files/jquery.mobile.custom.structure.css" />
-		<link rel="stylesheet" href="jquerymobile-files/jquery.mobile.custom.theme.css" />
-		<link rel="stylesheet" href="jquerymobile-files/jquery.mobile.icons.min.css" />
+		<meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+		<meta name="description" content="Aplicacao de monitoramento de sinais vitais humanos.">
+		<meta name="author" content="Alexandre Mota, Paulo Henrique">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		<link rel="stylesheet" href="js/jquerymobile-files/jquery.mobile.custom.structure.css" />
+		<link rel="stylesheet" href="js/jquerymobile-files/jquery.mobile.custom.theme.css" />
+		<link rel="stylesheet" href="js/jquerymobile-files/jquery.mobile.icons.min.css" />
 		<link rel="stylesheet" href="css/style.css"/>
 
 		<link rel="stylesheet" href="css/jquery.mobile-1.4.3.min.css" />
@@ -18,17 +19,17 @@
 
 		<!-- NOTE: Script load order is significant! -->
 
-		<script type="text/javascript" src="jquerymobile-files/jquery-2.1.1.js"></script>
-		<script type="text/javascript" src="jquerymobile-files/jquery.mobile-1.4.3.min.js"></script>
+		<script type="text/javascript" src="js/jquerymobile-files/jquery-2.1.1.js"></script>
+		<script type="text/javascript" src="js/jquerymobile-files/jquery.mobile-1.4.3.min.js"></script>
 
-		<script type="text/javascript" src="jquerymobile-files/jqm-datebox.core.min.js"></script>
-		<script type="text/javascript" src="jquerymobile-files/jqm-datebox.mode.calbox.min.js"></script>
-
+		<script type="text/javascript" src="js/jquerymobile-files/jqm-datebox.core.min.js"></script>
+		<script type="text/javascript" src="js/jquerymobile-files/jqm-datebox.mode.calbox.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
 		<script src="js/highcharts.js"></script>
 		<script src="js/exporting.js"></script>
 		<script src="js/script.js"></script>
 
-		<title>index</title>
+		<title>MSVH</title>
 
 	</head>
 
@@ -43,7 +44,7 @@
 
 			<div data-role="content">
 
-				<a href="#pacientes" class="show-page-loading-msg"> <h1 align="center"><img  src="img/monitor_icon.png"/></h1></a>
+				<h1 align="center"><img  src="img/monitor_icon.png"/></h1>
 				<h2 align="center">Monitoramento de Sinais Vitais Humanos</h2>
 			</div>
 
@@ -136,22 +137,22 @@
 						<li data-role="data-divider" data-theme="b">
 							<div class="ui-grid-a" >
 								<div id="nomeMonitor"class="ui-bar-b ui-grid-solo">
-									<img  src="jquerymobile-files/images/icons-png/user-white.png"/> Maria Silva Dias da Cunha
+									<img  src="js/jquerymobile-files/images/icons-png/user-white.png"/> Maria Silva Dias da Cunha
 								</div>
 								<div id="utiMonitor" class="ui-block-a ui-bar-b">
-									<img src="jquerymobile-files/images/icons-png/location-white.png"/> UTI 123
+									<img src="js/jquerymobile-files/images/icons-png/location-white.png"/> UTI 123
 								</div>
 								<div id="idadeMonitor" class="ui-block-b ui-bar-b ">
-									<img src="jquerymobile-files/images/icons-png/star-white.png"/> 45 anos
+									<img src="js/jquerymobile-files/images/icons-png/star-white.png"/> 45 anos
 								</div>
 								<div id="leitoMonitor" class="ui-block-a ui-bar-b">
-									<img src="jquerymobile-files/images/icons-png/plus-white.png"/> Leito 4
+									<img src="js/jquerymobile-files/images/icons-png/plus-white.png"/> Leito 4
 								</div>
 								<div id="ProntuarioMonitor" class="ui-block-b ui-bar-b">
-									<img src="jquerymobile-files/images/icons-png/tag-white.png"/> N.P. 654736
+									<img src="js/jquerymobile-files/images/icons-png/tag-white.png"/> N.P. 654736
 								</div>
 								<div id="descricaoMonitor" class="ui-bar-b ui-grid-solo">
-									<img src="jquerymobile-files/images/icons-png/edit-white.png"/> Diabética, Hipertensa
+									<img src="js/jquerymobile-files/images/icons-png/edit-white.png"/> Diabética, Hipertensa
 								</div>
 							</div><!-- /grid-b -->
 						</li>
@@ -171,6 +172,13 @@
 								</div>
 								<div id="monitorPA" class="ui-bar-a ui-grid-solo">
 									<a id="monPressaoArt" href="#graficos"><img src="img/blood pressure.png"/></a><big><big><big>130 / 85 (86)</big></big></big> mmHg
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="ui-grid-a" >
+								<div id="dataHoraDados"class="ui-grid-solo">
+									<h1 align="center">Data - Hora</h1>
 								</div>
 							</div>
 						</li>
@@ -208,7 +216,9 @@
 			</div>
 			<div data-role="content" >
 
-				<input name="mode1" id="dataInput" type="text" data-role="datebox" data-options='{"mode":"calbox", "maxDays":0, "minDays":5, "useHeader":false}' style=""/>
+				<select id="dataGrafico" class="comboboxData" data-mini="true" data-inline="true" data-icon="calendar" data-iconpos="left">
+    
+				</select>
 
 					
 				<div id="pressao" style="min-width: 87%; height: 400px; margin: 0 auto" class="bordagrafico"></div>
@@ -320,8 +330,9 @@
 
 				<div class="ui-grid-a">
     <div class="ui-block-a">
-	<input name="mode1" id="dataInput" type="text" data-role="datebox" data-options='{"mode":"calbox", "maxDays":0, "minDays":5, "useHeader":false}' style=""/>
-
+<select id="dataTabela" class="comboboxData" data-mini="true" data-inline="true" data-icon="calendar" data-iconpos="left">
+    
+</select>
 	</div>
     <div class="ui-block-b"id="bloco2">
 	
@@ -335,11 +346,12 @@
 	   <tr class="ui-bar-b">
 	   	<th data-priority="1">Hrs</th>
          <th data-priority="2">FC</th>
-         <th data-priority="3">FR</th>
-         <th data-priority="4">TC</th>
-         <th data-priority="5">SO2</th>
-         <th data-priority="6">PA</th>
-         <th data-priority="6">PAM</th>
+         <th data-priority="2">FR</th>
+         <th data-priority="2">TC</th>
+         <th data-priority="2">SO2</th>
+         <th data-priority="2">PAS</th>
+		 <th data-priority="2">PAD</th>
+         <th data-priority="2">PAM</th>
 		 </tr>
      </thead>
 
